@@ -38,7 +38,7 @@ print(f"係数: {model.coef_}")
 print(f"切片: {model.intercept_}")
 print (f"スループット：{1 / model.coef_[0]}")
 
-# プロット（オプション）
+# プロット
 plt.scatter(mt, id, color='blue')
 plt.plot(mt, model.predict(mt), color='red')
 plt.xlabel('MT')
