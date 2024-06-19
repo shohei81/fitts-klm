@@ -27,11 +27,11 @@ add_data('d650w120.csv', 650, 120)
 
 # リストをNumPy配列に変換
 mt = np.array(mt_list).reshape(-1, 1)  # 2次元配列に変換
-id = np.array(id_list)
+id = np.array(id_list).reshape(-1, 1)
 
 # 線形回帰モデルの作成とフィッティング
 model = LinearRegression()
-model.fit(mt, id)
+model.fit(id, mt)
 
 # モデルの係数と切片を表示
 print(f"係数: {model.coef_}")
@@ -39,8 +39,8 @@ print(f"切片: {model.intercept_}")
 print (f"スループット：{1 / model.coef_[0]}")
 
 # プロット
-plt.scatter(mt, id, color='blue')
-plt.plot(mt, model.predict(mt), color='red')
-plt.xlabel('MT')
-plt.ylabel('ID')
+plt.scatter(id, mt, color='blue')
+plt.plot(id, model.predict(id), color='red')
+plt.xlabel('ID')
+plt.ylabel('MT')
 plt.show()
