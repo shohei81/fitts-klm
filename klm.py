@@ -55,3 +55,25 @@ print(f"平均距離 (スタートボタンから数字ボタン): {average_dist
 print(f"平均距離 (数字ボタンから数字ボタン): {average_distance_number_to_number}")
 print(f"平均距離 (数字ボタンから演算記号ボタン): {average_distance_number_to_operation}")
 print(f"平均距離 (数字ボタンから=ボタン): {average_distance_number_to_equal}")
+
+ID_1 = np.log2((average_distance_start_to_numbers / 50) + 1)
+ID_2 = np.log2((average_distance_number_to_number / 50) + 1)
+ID_3 = np.log2((average_distance_number_to_operation / 50) + 1)
+ID_4 = np.log2((average_distance_number_to_equal / 50) + 1)
+
+print(f"ID_1: {ID_1}")
+print(f"ID_2: {ID_2}")
+print(f"ID_3: {ID_3}")
+print(f"ID_4: {ID_4}")
+
+MT_1 = 167.48 + ID_1 * 185.42
+MT_2 = 167.48 + ID_2 * 185.42
+MT_3 = 167.48 + ID_3 * 185.42
+MT_4 = 167.48 + ID_4 * 185.42
+sum_MT = MT_1 + MT_2 + MT_3*2 + MT_4
+
+print(f"MT_1: {MT_1}")
+print(f"MT_2: {MT_2}")
+print(f"MT_3: {MT_3}")
+print(f"MT_4: {MT_4}")
+print(f"合計MT: {sum_MT}")
