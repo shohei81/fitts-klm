@@ -1,5 +1,6 @@
-buttonsize,50
-buttondistance,100
+buttonsize,50,
+buttondistance,100,
+buttons,x,y
 START,240,120
 7,35,175
 8,135,175
